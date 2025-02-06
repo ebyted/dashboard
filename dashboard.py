@@ -56,5 +56,11 @@ app.layout = dbc.Container([
 ], fluid=True, className='bg-dark text-white p-4')
 
 # Ejecutar la app
+#if __name__ == "__main__":
+ #   app.run_server(debug=False, port=8050)
+    
+  #  server = app.server  # Agrega esto
+
 if __name__ == "__main__":
-    app.run_server(debug=False, port=8050)
+    app.run_server(debug=False, host="0.0.0.0", port=8050)
+
