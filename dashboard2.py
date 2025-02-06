@@ -51,6 +51,17 @@ app.layout = dbc.Container([
         ], color='success', inverse=True, className='shadow-lg'), width=6)
     ], className='mb-4'),
     
+    # Tabla con los datos fuente
+    dbc.Row([
+        dbc.Col(dbc.Card([
+            dbc.CardBody([
+                html.H4("Datos Fuente", className='card-title text-center text-white'),
+                dcc.Graph(figure=px.bar(df_sales, x='Categoría', y=['Ventas', 'Crecimiento', 'Ticket Promedio', 'Satisfacción Cliente'],
+                                        barmode='group', title="Datos Generales", template="plotly_dark"))
+            ])
+        ], color='dark', inverse=True, className='shadow-lg'), width=12)
+    ], className='mb-4'),
+    
     # Gráficos con disposición profesional
     dbc.Row([
         dbc.Col(dcc.Graph(figure=fig_sales_pie, className='shadow-lg p-3 mb-5 bg-dark rounded'), width=6),
